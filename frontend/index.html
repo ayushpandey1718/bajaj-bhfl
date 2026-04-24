@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BFHL Hierarchy Builder</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>BFHL Full Stack Challenge</h1>
+      <p class="subtitle">
+        Enter edges separated by commas or new lines (example: A-&gt;B, A-&gt;C).
+      </p>
+
+      <section class="card">
+        <label for="node-input">Node list</label>
+        <textarea
+          id="node-input"
+          rows="8"
+          placeholder="Type your own input here, e.g. A->B, A->C, B->D"
+        ></textarea>
+
+        <div class="controls">
+          <label for="api-url">API Base URL</label>
+          <input id="api-url" type="text" placeholder="http://localhost:3000" />
+          <button id="submit-btn">Submit</button>
+        </div>
+
+        <p id="status" class="status"></p>
+      </section>
+
+      <section class="card">
+        <h2>Response</h2>
+        <div id="structured-response"></div>
+      </section>
+
+      <section class="card">
+        <h2>Raw JSON</h2>
+        <pre id="response-box">{}</pre>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

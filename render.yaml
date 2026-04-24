@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: bfhl-fullstack
+    env: node
+    plan: free
+    rootDir: .
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: USER_ID
+        sync: false
+      - key: EMAIL_ID
+        sync: false
+      - key: COLLEGE_ROLL_NUMBER
+        sync: false
