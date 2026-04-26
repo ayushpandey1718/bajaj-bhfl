@@ -1,11 +1,29 @@
 const nodeInput = document.getElementById("node-input");
 const apiUrlInput = document.getElementById("api-url");
 const submitBtn = document.getElementById("submit-btn");
+const loadSampleBtn = document.getElementById("load-sample-btn");
+const clearBtn = document.getElementById("clear-btn");
+const copyJsonBtn = document.getElementById("copy-json-btn");
 const statusEl = document.getElementById("status");
 const responseBox = document.getElementById("response-box");
 const structuredResponse = document.getElementById("structured-response");
 
-apiUrlInput.value = "http://localhost:3000";
+const SAMPLE_INPUT = [
+  "A->B",
+  "A->C",
+  "B->D",
+  "C->E",
+  "E->F",
+  "X->Y",
+  "Y->Z",
+  "Z->X",
+  "G->H",
+  "G->H",
+  "hello",
+  "A->A",
+].join("\n");
+
+apiUrlInput.value = window.location.origin || "http://localhost:3000";
 
 function parseInputToArray(text) {
   return text
@@ -23,6 +41,12 @@ async function submitData() {
   }
 
   const data = parseInputToArray(nodeInput.value);
+  if (data.length === 0) {
+    statusEl.textContent = "Please enter at least one edge value.";
+    statusEl.style.color = "#f87171";
+    return;
+  }
+
   submitBtn.disabled = true;
   statusEl.textContent = "Submitting request...";
   statusEl.style.color = "#facc15";
@@ -179,3 +203,27 @@ function renderTreeNode(label, childrenMap) {
 }
 
 submitBtn.addEventListener("click", submitData);
+loadSampleBtn.addEventListener("click", () => {
+  nodeInput.value = SAMPLE_INPUT;
+  statusEl.textContent = "Sample input loaded.";
+  statusEl.style.color = "#93c5fd";
+});
+
+clearBtn.addEventListener("click", () => {
+  nodeInput.value = "";
+  structuredResponse.innerHTML = "";
+  responseBox.textContent = "{}";
+  statusEl.textContent = "Cleared.";
+  statusEl.style.color = "#94a3b8";
+});
+
+copyJsonBtn.addEventListener("click", async () => {
+  try {
+    await navigator.clipboard.writeText(responseBox.textContent || "{}");
+    statusEl.textContent = "Raw JSON copied to clipboard.";
+    statusEl.style.color = "#4ade80";
+  } catch (error) {
+    statusEl.textContent = "Clipboard access denied by browser.";
+    statusEl.style.color = "#f87171";
+  }
+});

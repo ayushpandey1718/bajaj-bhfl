@@ -7,36 +7,49 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <main class="container">
-      <h1>BFHL Full Stack Challenge</h1>
-      <p class="subtitle">
-        Enter edges separated by commas or new lines (example: A-&gt;B, A-&gt;C).
-      </p>
-
-      <section class="card">
-        <label for="node-input">Node list</label>
-        <textarea
-          id="node-input"
-          rows="8"
-          placeholder="Type your own input here, e.g. A->B, A->C, B->D"
-        ></textarea>
-
-        <div class="controls">
-          <label for="api-url">API Base URL</label>
-          <input id="api-url" type="text" placeholder="http://localhost:3000" />
-          <button id="submit-btn">Submit</button>
+    <main class="container app-shell">
+      <header class="page-header">
+        <div>
+          <p class="eyebrow">SRM Full Stack Engineering Challenge</p>
+          <h1>BFHL Hierarchy Analyzer</h1>
+          <p class="subtitle">
+            Submit directed edges and view parsed trees, cycles, and summary metrics in one place.
+          </p>
         </div>
+      </header>
 
-        <p id="status" class="status"></p>
-      </section>
+      <div class="layout">
+        <section class="card input-card">
+          <h2>Input</h2>
+          <label for="node-input">Node List</label>
+          <textarea
+            id="node-input"
+            rows="10"
+            placeholder="Enter edges separated by comma or newline&#10;Example: A->B, A->C, B->D"
+          ></textarea>
+          <div class="helper-row">
+            <button id="load-sample-btn" class="secondary-btn" type="button">Load Sample</button>
+            <button id="clear-btn" class="secondary-btn" type="button">Clear</button>
+          </div>
+          <div class="controls">
+            <label for="api-url">API Base URL</label>
+            <input id="api-url" type="text" placeholder="https://your-domain.vercel.app" />
+            <button id="submit-btn" type="button">Analyze</button>
+          </div>
+          <p id="status" class="status"></p>
+        </section>
 
-      <section class="card">
-        <h2>Response</h2>
-        <div id="structured-response"></div>
-      </section>
+        <section class="card output-card">
+          <h2>Structured Response</h2>
+          <div id="structured-response"></div>
+        </section>
+      </div>
 
-      <section class="card">
-        <h2>Raw JSON</h2>
+      <section class="card raw-card">
+        <div class="card-title-row">
+          <h2>Raw JSON</h2>
+          <button id="copy-json-btn" class="secondary-btn" type="button">Copy JSON</button>
+        </div>
         <pre id="response-box">{}</pre>
       </section>
     </main>
