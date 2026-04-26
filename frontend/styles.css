@@ -5,8 +5,8 @@
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  background: radial-gradient(circle at top left, #1e293b, #0f172a 55%);
-  color: #e2e8f0;
+  background: radial-gradient(circle at top left, #f8fafc, #e2e8f0 60%);
+  color: #0f172a;
 }
 
 .container {
@@ -22,8 +22,8 @@ body {
 }
 
 .page-header {
-  background: rgba(15, 23, 42, 0.7);
-  border: 1px solid #334155;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid #cbd5e1;
   border-radius: 14px;
   padding: 16px 18px;
   backdrop-filter: blur(4px);
@@ -35,7 +35,7 @@ body {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #93c5fd;
+  color: #1d4ed8;
 }
 
 h1 {
@@ -45,13 +45,13 @@ h1 {
 
 .subtitle {
   margin: 8px 0 0;
-  color: #94a3b8;
+  color: #475569;
   max-width: 760px;
 }
 
 .card {
-  background: rgba(17, 24, 39, 0.85);
-  border: 1px solid #334155;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid #cbd5e1;
   border-radius: 12px;
   padding: 16px;
 }
@@ -76,9 +76,9 @@ label {
 textarea,
 input {
   width: 100%;
-  background: #0b1220;
-  color: #e2e8f0;
-  border: 1px solid #334155;
+  background: #ffffff;
+  color: #0f172a;
+  border: 1px solid #cbd5e1;
   border-radius: 8px;
   padding: 10px 12px;
   font-size: 14px;
@@ -119,13 +119,13 @@ button:disabled {
   width: auto;
   margin-top: 0;
   background: transparent;
-  border: 1px solid #475569;
-  color: #cbd5e1;
+  border: 1px solid #94a3b8;
+  color: #334155;
   padding: 8px 12px;
 }
 
 .secondary-btn:hover:not(:disabled) {
-  background: #1e293b;
+  background: #f1f5f9;
 }
 
 .helper-row {
@@ -141,8 +141,8 @@ button:disabled {
 }
 
 pre {
-  background: #0b1220;
-  border: 1px solid #334155;
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
   border-radius: 8px;
   padding: 12px;
   overflow: auto;
@@ -162,10 +162,10 @@ pre {
 }
 
 .mini-card {
-  border: 1px solid #334155;
+  border: 1px solid #cbd5e1;
   border-radius: 8px;
   padding: 12px;
-  background: #020617;
+  background: #f8fafc;
 }
 
 .mini-card h3 {
@@ -175,7 +175,7 @@ pre {
 
 .mini-card p {
   margin: 6px 0;
-  color: #cbd5e1;
+  color: #334155;
 }
 
 .wide-card {
@@ -183,7 +183,7 @@ pre {
 }
 
 .muted {
-  color: #94a3b8;
+  color: #64748b;
   margin: 6px 0;
 }
 
@@ -194,15 +194,15 @@ pre {
 
 .simple-list li {
   margin: 4px 0;
-  color: #cbd5e1;
+  color: #334155;
 }
 
 .tree-card {
   margin-top: 12px;
-  border: 1px solid #334155;
+  border: 1px solid #cbd5e1;
   border-radius: 8px;
   padding: 12px;
-  background: #0b1220;
+  background: #ffffff;
 }
 
 .tree-header {
@@ -211,7 +211,7 @@ pre {
   align-items: center;
   gap: 8px;
   margin-bottom: 10px;
-  color: #cbd5e1;
+  color: #1e293b;
 }
 
 .depth-badge,
@@ -223,13 +223,13 @@ pre {
 }
 
 .depth-badge {
-  background: #1d4ed8;
-  color: #dbeafe;
+  background: #dbeafe;
+  color: #1d4ed8;
 }
 
 .cycle-badge {
-  background: #7f1d1d;
-  color: #fecaca;
+  background: #fee2e2;
+  color: #b91c1c;
 }
 
 .tree-wrap {
@@ -250,7 +250,7 @@ pre {
   left: 8px;
   top: 0;
   bottom: 10px;
-  border-left: 1px solid #475569;
+  border-left: 1px solid #94a3b8;
 }
 
 .tree-root li {
@@ -264,7 +264,7 @@ pre {
   left: -12px;
   top: 12px;
   width: 12px;
-  border-top: 1px solid #475569;
+  border-top: 1px solid #94a3b8;
 }
 
 .tree-root > li::before {
@@ -275,9 +275,9 @@ pre {
   display: inline-block;
   padding: 4px 10px;
   border-radius: 8px;
-  border: 1px solid #334155;
-  background: #111827;
-  color: #e2e8f0;
+  border: 1px solid #cbd5e1;
+  background: #f8fafc;
+  color: #0f172a;
   font-weight: 600;
   min-width: 32px;
   text-align: center;
